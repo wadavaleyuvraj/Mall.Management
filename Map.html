@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map page</title>
+    <link rel="stylesheet" href="../Style_sheets/StyleSheet.css">
+    <script src="https://kit.fontawesome.com/cf16c43249.js" crossorigin="anonymous"></script>
+    <style>
+        .d1{
+            width: 250px;
+            padding: 20px;
+            overflow: scroll;
+            background: rgb(220, 220, 220);
+            height: 100%;
+            border-right: 1px dashed black;
+        }
+        h2{
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+            background-color: rgb(255, 255, 255);
+        }
+        .catBtn{
+            background-color: aquamarine;
+            width: 100px;
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.637);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 900;
+            font-size: 15px;
+            margin: 10px;
+        }
+        .active, .catBtn:hover{
+            background-color: rgb(100, 234, 189);
+            box-shadow: 0 2px 10px rgb(234, 233, 233);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function act(id)
+        {
+            const element=document.getElementById(id);
+            element.style.backgroundColor='rgba(0, 255, 255, 0.726)';
+            element.style.color='black';
+        }
+    </script>
+</head>
+<body onload="act('map')">
+    <section class="container">
+        <div class="navigation">
+            <div class="logo"></div>
+            <a href="Cus_home.html">
+                <button class="navBtn" id="home"><i class="fas fa-home"></i> Home</button>
+            </a>
+            <a href="Map.html">
+                <button class="navBtn" id="map"><i class="fas fa-map"></i> Mall Map</button>
+            </a>
+        </div>
+        <div id="content">
+            <div class="con2">
+                <div class="d1">
+                    <h2>
+                        Choose the category
+                    </h2>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/food_map.png';">Food</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/toys_map.png'">Toys</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/play_map.png'">Play</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/movies_map.png'">Movies</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/grocery_map.png'">Grocery</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/giftCenter_map.png'">Gifts</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/gadgets_map.png'">Gadgets</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/shoes_map.png'">Foot wear</button>
+                    <button class="catBtn" onclick="document.getElementById('Img').src='../Maps/clothes_map.png'">Clothing</button>
+                    <button class="catBtn reset" onclick="document.getElementById('Img').src='../Maps/mall_map.png'">Reset</button>
+                </div>
+                <div class="d2">
+                    <img id="Img" src="../Maps/Mall_map.png" alt="not Available" style="height: 600px; position: relative; left: 130px; top: 10px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Get the container element
+        var btnContainer = document.getElementsByClassName("d1");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer[0].getElementsByClassName("catBtn");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+
+                // If there's no active class
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+                
+                if(!(this.className.includes("reset")))
+                {
+                    // Add the active class to the current/clicked button
+                    this.className += " active";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

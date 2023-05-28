@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks page</title>
+    <link rel="stylesheet" href="../Style_sheets/StyleSheet.css">
+    <script src="https://kit.fontawesome.com/cf16c43249.js" crossorigin="anonymous"></script>
+    <script>
+        const { MongoClient, ServerApiVersion } = require('mongodb');
+        const uri = "mongodb+srv://pratik_k:aCJLmZTfr97NMLSW@cluster0.uwon6s0.mongodb.net/?retryWrites=true&w=majority";
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+        client.connect(err => {
+            const collection = client.db("test").collection("devices");
+            // perform actions on the collection object
+            client.close();
+        });
+    </script>
+</head>
+<body>
+    <div class="con1">
+    
+        <table class="table" id="emp">
+            <tr>
+                <th>Emp email</th>
+                <th>Emp Name</th>
+                <th>phone</th>
+                <th>dob </th>
+                <th>pin</th>
+            </tr>
+            
+        </table>
+
+        <script>
+            const updateEmp = async ()=>{
+                let html = `
+                <tr>
+                <th>Emp email</th>
+                <th>Emp Name</th>
+                <th>phone</th>
+                <th>dob </th>
+                <th>pin</th>
+            </tr>
+                `
+                let data = await (await fetch('http://localhost:3000/api/emp')).json()
+                console.log(data);
+                data.forEach((d)=>{
+                    html += `
+                    <tr>
+                        <td>${d.email}</td>
+                        <td>${d.name}</td>
+                        <td>${d.phone}</td>
+                        <td>${d.dob}</td>
+                        <td>${d.address}</td>
+                        <td>${d.pin}</td>
+            </tr>
+                    `
+                    document.getElementById("emp").innerHTML = html
+                })
+            }
+            updateEmp()
+        </script>
+    </div>
+</body>
+</html>

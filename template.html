@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="../Style_sheets/StyleSheet.css">
+    <script src="https://kit.fontawesome.com/cf16c43249.js" crossorigin="anonymous"></script>
+    <style>
+        embed{
+            height: 100%;
+            width: 100%;
+        }
+        .activated{
+            background-color: rgba(0, 255, 255, 0.726);
+        }
+    </style>
+    <script>
+        function load(page){
+            document.getElementById('content').innerHTML='<embed src="'+page+'.html" type="text/html"/>';
+            document.title=page;
+        }
+        // function hide(){
+        //     document.getElementsByClassName('navigation')[0].style='display:none';
+        // }
+    </script>
+</head>
+<body>
+    <section class="container">
+        <nav class="navigation">
+            <button class="navBtn activated" id="home" onclick="load('home')"><i class="fa fa-home"></i> Home</button>
+            <button class="navBtn" id="stocks" onclick="load('Stks')"><i class="fa fa-truck"></i> Stocks</button>
+            <button class="navBtn" id="shpD" onclick="load('shpData')"><i class="fa-solid fa-shop"></i> Shops data</button>
+            <button class="navBtn" id="empD" onclick="load('empData')"><i class="fa-solid fa-user"></i> Employee data</button>
+        </nav>
+        <div id="content">
+        </div>
+    </section>
+    <script>
+        // Get the container element
+        var btnContainer = document.getElementsByClassName("navigation");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer[0].getElementsByClassName("navBtn");
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("activated");
+
+                // If there's no active class
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" activated", "");
+                }
+                // Add the active class to the current/clicked button
+                this.className += " activated";
+            });
+        }
+    </script>
+</body>
+</html>

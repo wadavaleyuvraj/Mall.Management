@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="../Style_sheets/StyleSheet.css">
+    <script src="https://kit.fontawesome.com/cf16c43249.js" crossorigin="anonymous"></script>
+    <script>
+        function act(id)
+        {
+            const element=document.getElementById(id);
+            element.style.backgroundColor='rgba(0, 255, 255, 0.726)';
+            element.style.color='black';
+        }
+    </script>
+</head>
+<body onload="act('home')">
+    <section class="container">
+        <div class="navigation">
+            <div class="logo"></div>
+            <button class="navBtn" id="home"><i class="fa fa-home" style="font-size: 12px;"></i> Home</button>
+            <a href="Map.html">
+                <button class="navBtn" id="map"><i class="fas fa-map" style="font-size: 12px;"></i> Mall Map</button>
+            </a>
+        </div>
+        <div id="content" style="display: flexbox;background: white;">
+            <div id="wcmTxt">Welcome to Shopzy Mall</div>
+            <img id="img1" src="../illustration1.png" alt="" >
+        </div>
+    </section>
+</body>
+</html>

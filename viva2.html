@@ -1,0 +1,68 @@
+<!-- javascript strings -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript strings</title>
+    <script>
+        function concat(){
+            var s1=document.getElementById('s1').value;
+            var s2=document.getElementById('s2').value;
+            const ans=document.getElementById('ans');
+            ans.innerText=s1+s2;
+        }
+        function len(){
+            var l1=document.getElementById('s1').value.length;
+            var l2=document.getElementById('s2').value.length;
+            const ans=document.getElementById('ans');
+            ans.innerText="Length of string 1= "+l1+"\n Length of string 2= "+l2;
+        }
+        // substr==subtring==slice
+        function subStr(){
+            var s1=document.getElementById('s1').value;
+            var s2=document.getElementById('s2').value;
+            const ans=document.getElementById('ans');
+            ans.innerText="Substring of string 1= "+s1.substring(0,5)+"\n Substring of string 2= "+s2.substring(0,5);
+            
+        }
+        // replaces first 5 chars
+        function replace(){
+            var s1=document.getElementById('s1').value;
+            var s2=document.getElementById('s2').value;
+            const ans=document.getElementById('ans');
+            let sl_1=s1.substr(0,5);
+            ans.innerText="String 2 after replacement= "+s1.replace(sl_1,s2);
+        }
+        function chCase(){
+            var s1=document.getElementById('s1').value;
+            var s2=document.getElementById('s2').value;
+            const ans=document.getElementById('ans');
+            ans.innerText="Upper case of string 1= "+s1.toUpperCase()+"\nLower case of string 1= "+s1.toLowerCase()+"\n Upper case of string 2= "+s2.toUpperCase()+"\nLower case of string 2= "+s2.toLowerCase();
+        }
+        function Split(){
+            var s1=document.getElementById('s1').value;
+            var s2=document.getElementById('s2').value;
+            const ans=document.getElementById('ans');
+            ans.innerText="String 1 after splitting:\n"+s1.split(" ")[0]+'\n'+s1.split(" ")[1];
+        }
+    </script>
+</head>
+<body>
+    <p>String 1: <input id="s1" type="text" value="Enter string 1 here.."></p>
+    <p>String 2: <input id="s2" type="text" value="Enter string 2 here.."></p>
+    <fieldset>
+        <legend>Answer</legend>
+        <p id="ans"></p>
+    </fieldset>
+    <p>
+        <button onclick="concat()">Concat</button>
+        <button onclick="len()">Length</button>
+        <button onclick="subStr()">Substring</button>
+        <button onclick="replace()">Replace</button>
+        <button onclick="chCase()">Change case</button>
+        <button onclick="Split()">Split</button>
+    </p>
+</body>
+</html>

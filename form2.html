@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css2.css">
+    <script src="https://kit.fontawesome.com/cf16c43249.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="container">
+        <div class="title"><strong><a href="index.html"><i class="fa-solid fa-backward" style="font-size: 15px; margin-right: 20px;"></i></a> Job related information</strong></div>
+        <div class="progress">
+            <div class="circle active">1</div>
+            <div class="rect active"></div>
+            <div class="circle active">2</div>
+            <div class="rect"></div>
+            <div class="circle">3</div>
+        </div>
+        <form onsubmit="window.location.href = 'form3.html'; return false;">
+            <div class="id">
+                Job title <br>
+                <input type="text" name="job" id="job" required>
+            </div>
+            <div class="name">
+                Job location <br>
+                <input type="text" name="location" id="location" required>
+            </div>
+            <div class="dob">
+                Job summary <br>
+                <textarea name="jSummary" id="jSummary" cols="50" rows="12"></textarea>
+            </div>
+            <div class="pob">
+                Reporting to <br>
+                <input type="text" name="boss" id="boss" required>
+            </div>
+            <div class="add">
+                Joining date <br>
+                <input type="date" name="jDate" id="jDate" required>
+            </div>
+            <div class="pin">
+                Salary <br>
+                <div class="sal">
+                    <i class="fa-solid fa-indian-rupee-sign" style="padding-top: 10px; margin-right:5px;"></i><input type="number" name="salary" id="salary" required>
+                </div>
+            </div>
+            <div class="pic">
+                <i class="fa-solid fa-camera" style="font-size: 30px; position:relative; top:43%; left:60%; color: rgb(3, 229, 154); z-index: 100;"></i>
+                <div id="pic"><img src="dp.png" alt="Not available"></div>
+            </div>
+            <div class="sub">
+                <button type="submit"><strong> Submit</strong></button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

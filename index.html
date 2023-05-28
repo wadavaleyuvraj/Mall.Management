@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css1.css">
+    <script src="https://kit.fontawesome.com/cf16c43249.js" crossorigin="anonymous"></script>
+    <script src="../mongoose/src/app.js"></script>
+</head>
+<body>
+    <section class="container">
+        <div class="title"><strong><i class="fa-solid fa-backward" style="font-size: 15px; margin-right: 20px;"></i> Personal information</strong></div>
+        <div class="progress">
+            <div class="circle active">1</div>
+            <div class="rect"></div>
+            <div class="circle">2</div>
+            <div class="rect"></div>
+            <div class="circle">3</div>
+        </div>
+        <form onsubmit="window.location.href = 'form2.html'; return false;">
+            <div class="id">
+                Email ID <br>
+                <input type="email" name="id" id="id" required>
+            </div>
+            <div class="name">
+                Full Name <br>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="phone">
+                Phone number <br>
+                <input type="number" name="phone" id="phone" required>
+
+            </div>
+            <div class="dob">
+                Date of Birth <br>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+            <div class="pob">
+                Place of birth <br>
+                <input type="text" name="pob" id="pob" required>
+            </div>
+            <div class="gender radio">
+                Gender <br>
+                <input type="radio" value="Male" name="gender" style="height: 12px; width: 12px; margin: 5px;" required> Male
+                <input type="radio" value="Female" name="gender" style="height: 12px; width: 12px; margin: 5px;" required> Female
+            </div>
+            <div class="add">
+                Address <br>
+                <input type="text" name="add" id="add" required>
+            </div>
+            <div class="pin">
+                ZIP code <br>
+                <input type="number" name="pin" id="pin" required>
+            </div>
+            <div class="pic">
+                <i class="fa-solid fa-camera" style="font-size: 30px; position:relative; top:43%; left:60%; color: rgb(3, 229, 154); z-index: 100;"></i>
+                <div id="pic"><img src="dp.png" alt="Not available"></div>
+            </div>
+            <div class="sub">
+                <button type="submit"><strong> Submit</strong></button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

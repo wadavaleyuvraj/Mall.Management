@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shops page</title>
+    <link rel="stylesheet" href="../Style_sheets/StyleSheet.css">
+    <script src="https://kit.fontawesome.com/cf16c43249.js" crossorigin="anonymous"></script>
+    <script>
+        function act(id)
+        {
+            const element=document.getElementById(id);
+            element.style.backgroundColor='rgba(0, 255, 255, 0.726)';
+            element.style.color='black';
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="con1">
+        <table class="table">
+            <tr>
+                <th>Shop ID</th>
+                <th>Shop Name</th>
+                <th>Owner Name</th>
+                <th>Location</th>
+                <th>Category</th>
+                <th>Rent</th>
+                <th>Rent Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Dominos</td>
+                <td>Mr. Harish Chandani</td>
+                <td>2,10</td>
+                <td>Food</td>
+                <td>50,000</td>
+                <td>Pending</td>
+                <td>
+                    <button class="actBtn">Update</button>
+                    <button class="actBtn">Delete</button>
+                </td>   
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
